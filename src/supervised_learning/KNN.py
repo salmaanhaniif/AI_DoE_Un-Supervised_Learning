@@ -30,21 +30,23 @@ class KNN:
     
     def getMostCommonLabel(self, labels):
         # most common = modus
-        labelCounts = {}
-        for label in labels:
-            if label in labelCounts:
-                labelCounts[label] += 1
-            else:
-                labelCounts[label] = 1
+        labelss, counts = np.unique(labels, return_counts=True)
+        return labelss[np.argmax(counts)]
+        # labelCounts = {}
+        # for label in labels:
+        #     if label in labelCounts:
+        #         labelCounts[label] += 1
+        #     else:
+        #         labelCounts[label] = 1
         
-        mostCommonLabel = None
-        maxCount = 0
-        for label, count in labelCounts.items():
-            if count > maxCount:
-                maxCount = count
-                mostCommonLabel = label
+        # mostCommonLabel = None
+        # maxCount = 0
+        # for label, count in labelCounts.items():
+        #     if count > maxCount:
+        #         maxCount = count
+        #         mostCommonLabel = label
         
-        return mostCommonLabel
+        # return mostCommonLabel
 
     def subPredict(self, x):
         # Hitung jarak x yang akan diprediksi dengan semua X di X_train
