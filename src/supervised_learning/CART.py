@@ -19,7 +19,7 @@ class Node:
 
 
 class DecisionTree:
-    def __init__(self, minDataSplit=2, maxDepth=100, n_Features=None):
+    def __init__(self, minDataSplit=5, maxDepth=100, n_Features=None):
         self.minDataSplit = minDataSplit
         self.maxDepth = maxDepth
         self.n_Features = n_Features
@@ -41,7 +41,7 @@ class DecisionTree:
             leafValue = getModusLabel(y)
             return Node(value=leafValue, isLeaf=True)
         
-        featIdxs = np.random.choice(X.shape[1], self.n_Features, replace=False)
+        featIdxs = np.arange(X.shape[1])
         
         # find best split
         bestFeature, bestThres = self.bestSplit(X, y, featIdxs)
@@ -49,7 +49,7 @@ class DecisionTree:
         # split data
         leftIdxs, rightIdxs = self.split(X[:, bestFeature], bestThres)
 
-        # 🛑 Cek kalau ada split yang kosong
+        # Cek kalau ada split yang kosong
         if len(leftIdxs) == 0 or len(rightIdxs) == 0:
             leafValue = getModusLabel(y)
             return Node(value=leafValue, isLeaf=True)
