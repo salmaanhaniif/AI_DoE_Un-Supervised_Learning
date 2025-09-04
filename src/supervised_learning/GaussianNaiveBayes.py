@@ -39,10 +39,10 @@ class GaussianNaiveBayes:
             posterior += prior
             posteriors.append(posterior)
         
-        return self.classes[np.argmax(posterior)]
+        return self.classes[np.argmax(posteriors)]
     
     def pdf(self, classIdx, x):
         # Probability Densition Fungction Gaussian
         mean = self.mean[classIdx]
         var = self.var[classIdx]
-        return (np.exp(-(x-mean)**2 / 2*var)) / (np.sqrt(2*np.pi*var))
+        return (np.exp(-((x-mean)**2) / (2*var))) / (np.sqrt(2*np.pi*var))
