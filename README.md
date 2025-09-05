@@ -19,20 +19,33 @@ cd src
 3. Untuk menjalankan notebook langsung saja buka notebook 1 untuk pelatihan dan evaluasi model supervised learning. notebook 2 untuk unsupervised learning.
 
 Supervised Learning (Bagian 2)
+
 [v] KNN
+
 [v] LogReg
+
 [v] Gaussian Naive Bayes
+
 [v] CART
+
 [v] SVM
+
 [v] ANN
+
 Bonus yang diimplementasikan:
+
 [v] Random Forest
 
 Unsupervised Learning (Bagian 3)
+
 [v] K-MEANS
+
 [v] DBSCAN
+
 [v] PCA
 
 Reinforcement Learning (Bagian 4)
+
 [v] Q-LEARNING
+
 [v] SARSA
